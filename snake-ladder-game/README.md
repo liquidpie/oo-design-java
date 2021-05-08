@@ -2,6 +2,9 @@
 
 Create a snake and ladder game application
 
+![Snake Ladder Game](./snl.gif)
+
+
 ### Rules of the game
 
 - The board will have 100 cells numbered from 1 to 100. 
