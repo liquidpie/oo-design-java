@@ -12,3 +12,6 @@ Develop a message queueing system
 7.	Subscriber can consume the messages in batches if the queue has more than one message and it should be configurable. 
 8.  There must be a retry mechanism for handling error cases when some exception occurs in listening/processing a message, that must be retried.
 
+### Notes
+* Code is built using JDK11
+* Gson 2.8.6 and Junit 5.4 should be on classpath
