@@ -1,6 +1,6 @@
 package com.vivek.mqs.domain;
 
-import java.util.UUID;
+import com.vivek.mqs.util.Utilities;
 
 public class Message {
 
@@ -10,7 +10,7 @@ public class Message {
     private int redeliveryAttempts;
 
     public Message(Object body) {
-        this.messageId = UUID.randomUUID().toString();
+        this.messageId = Utilities.newUUID();
         this.body = body;
         createdAt = System.currentTimeMillis();
     }
