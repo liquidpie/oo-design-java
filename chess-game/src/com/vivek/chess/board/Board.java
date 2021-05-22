@@ -90,11 +90,11 @@ public class Board {
         return threatenedPositions;
     }
 
-    public void registerKingPosition(Piece piece) {
-        if (piece.getColor() == PieceColor.WHITE)
-            whiteKingPosition = piece.getPosition();
-        else if (piece.getColor() == PieceColor.BLACK)
-            blackKingPosition = piece.getPosition();
+    public void registerKingPosition(PieceColor color, Position position) {
+        if (color == PieceColor.WHITE)
+            whiteKingPosition = position;
+        else if (color == PieceColor.BLACK)
+            blackKingPosition = position;
     }
 
     public void executeMove(MoveCommand command) {
@@ -102,6 +102,9 @@ public class Board {
         for (int i = 0; i < pieces.size(); i++) {
             var targetPiece = pieces.get(i);
             if (targetPiece.getPosition().equals(command.getDst())) {
+                if (targetPiece.getType() == PieceType.KING) {
+                    registerKingPosition(targetPiece.getColor(), null);
+                }
                 pieces.remove(i);
                 break;
             }

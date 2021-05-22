@@ -43,14 +43,15 @@ public class Game {
 
             board.executeMove(command);
 
-            if (status == GameStatus.WHITE_MOVE)
-                status = GameStatus.BLACK_MOVE;
-            else if (status == GameStatus.BLACK_MOVE)
-                status = GameStatus.WHITE_MOVE;
-
             renderer.render(getState());
 
+            finished = isGameOver();
 
+            if (finished) {
+                status = status == GameStatus.WHITE_MOVE ? GameStatus.WHITE_VICTORY : GameStatus.BLACK_VICTORY;
+            } else {
+                status = status == GameStatus.WHITE_MOVE ? GameStatus.BLACK_MOVE : GameStatus.WHITE_MOVE;
+            }
         }
 
         // Game Over status message
@@ -75,15 +76,20 @@ public class Game {
         boardCopy.executeMove(command);
 
         for (Piece piece : boardCopy.getPieces()) {
-            if (status == GameStatus.WHITE_MOVE &&
+            if (status == GameStatus.WHITE_MOVE && piece.getColor() == PieceColor.WHITE &&
                     piece.getThreatenedPositions(boardCopy).contains(boardCopy.getWhiteKingPosition()))
                 return false;
-            if (status == GameStatus.BLACK_MOVE &&
+            if (status == GameStatus.BLACK_MOVE && piece.getColor() == PieceColor.BLACK &&
                     piece.getThreatenedPositions(boardCopy).contains(boardCopy.getBlackKingPosition()))
                 return false;
         }
 
         return true;
+    }
+
+    private boolean isGameOver() {
+        // ToDo add checks for checkmate and stalemate
+        return board.getWhiteKingPosition() == null || board.getBlackKingPosition() == null;
     }
 
     private MoveCommand getCommand() {

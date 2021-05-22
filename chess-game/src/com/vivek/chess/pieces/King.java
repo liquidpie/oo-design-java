@@ -38,12 +38,12 @@ public class King extends Piece {
 
     public void setBoardHandle(Board board) {
         this.boardHandle = board;
-        this.boardHandle.registerKingPosition(this);
+        this.boardHandle.registerKingPosition(this.color, this.position);
     }
 
     @Override
     public void move(Position newPosition) {
         super.move(newPosition);
-        boardHandle.registerKingPosition(this);
+        boardHandle.registerKingPosition(this.color, this.position);
     }
 }
