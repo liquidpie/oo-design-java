@@ -3,6 +3,7 @@ package com.vivek.chess;
 import com.vivek.chess.board.Board;
 import com.vivek.chess.board.GameState;
 import com.vivek.chess.board.MoveCommand;
+import com.vivek.chess.log.History;
 import com.vivek.chess.pieces.Piece;
 import com.vivek.chess.render.BoardRenderer;
 import com.vivek.chess.types.GameStatus;
@@ -18,12 +19,14 @@ public class Game {
     private boolean finished;
 
     private final Scanner scanner;
+    private final History history;
 
     public Game(BoardRenderer renderer) {
         this.board = new Board();
         this.renderer = renderer;
         this.status = GameStatus.WHITE_MOVE;
         this.scanner = new Scanner(System.in);
+        this.history = new History();
     }
 
     public void start() {
@@ -42,6 +45,7 @@ public class Game {
             }
 
             board.executeMove(command);
+            history.addLog(History.Log.of(board.getPieces(), command.getSrc(), command.getDst()));
 
             renderer.render(getState());
 
