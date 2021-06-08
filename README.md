@@ -12,3 +12,7 @@ Repository for OO Design Problems
 * BookMyShow Application
 * Tic Tac Toe Game
 * Url Shortener
+* Online Book Reader
+* Fantasy Cricket Team building
+* BookMyShow
+* Splitwise
