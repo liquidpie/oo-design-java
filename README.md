@@ -16,3 +16,4 @@ Repository for OO Design Problems
 * Fantasy Cricket Team building
 * BookMyShow
 * Splitwise
+* Encryption
