@@ -1,6 +1,6 @@
 package com.vivek.encryption.algorithm;
 
-public interface Crypt {
+public interface Cipher {
 
     byte[] encrypt(byte[] data);
 

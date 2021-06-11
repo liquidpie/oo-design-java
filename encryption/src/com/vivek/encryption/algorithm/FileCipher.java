@@ -2,7 +2,7 @@ package com.vivek.encryption.algorithm;
 
 import java.io.File;
 
-public interface FileCrypt {
+public interface FileCipher {
 
     void encryptFile(File inFile, File outFile) throws Exception;
 

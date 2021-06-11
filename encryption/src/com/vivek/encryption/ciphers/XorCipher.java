@@ -1,16 +1,19 @@
-package com.vivek.encryption.algorithm;
+package com.vivek.encryption.ciphers;
+
+import com.vivek.encryption.algorithm.FileCipher;
+import com.vivek.encryption.algorithm.StringCipher;
 
 import java.io.*;
 
-public class XorCrypt implements Crypt, FileCrypt {
+public class XorCipher implements StringCipher, FileCipher {
 
     private final byte[] key;
 
-    public XorCrypt(byte[] key) {
+    public XorCipher(byte[] key) {
         this.key = key;
     }
 
-    public XorCrypt(String key) {
+    public XorCipher(String key) {
         assert key != null;
         this.key = key.getBytes();
     }
@@ -40,6 +43,16 @@ public class XorCrypt implements Crypt, FileCrypt {
     @Override
     public byte[] decrypt(byte[] data) {
         return encrypt(data);
+    }
+
+    @Override
+    public String encrypt(String plainText) {
+        return new String(encrypt(plainText.getBytes()));
+    }
+
+    @Override
+    public String decrypt(String cipherText) {
+        return new String(decrypt(cipherText.getBytes()));
     }
 
     /**
