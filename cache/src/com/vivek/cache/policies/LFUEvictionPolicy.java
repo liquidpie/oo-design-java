@@ -19,7 +19,10 @@ public class LFUEvictionPolicy<Key> implements EvictionPolicy<Key> {
     @Override
     public void keyAccessed(Key key) {
         if (mapper.containsKey(key)) {
-            mapper.get(key).accessed();
+            var node = mapper.get(key);
+            counter.remove(node);
+            node.accessed();
+            counter.add(node);
         } else {
             var node = new AccessCountNode<>(key);
             counter.add(node);
