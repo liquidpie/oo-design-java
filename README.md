@@ -17,3 +17,5 @@ Repository for OO Design Problems
 * BookMyShow
 * Splitwise
 * Encryption
+* Cache
+* Basic Logger
