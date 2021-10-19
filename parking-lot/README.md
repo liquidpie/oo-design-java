@@ -15,3 +15,7 @@
 ### Class Diagram
 
 ![](./images/img.png)
+
+### Additional Requirements
+
+1. Drivers can also have memberships (but also support guest drivers)

@@ -13,6 +13,22 @@ public class Vehicle {
         lot = Lot.getInstance();
     }
 
+    public int getSize() {
+        return size;
+    }
+
+    public String getLicense() {
+        return license;
+    }
+
+    public boolean isStatus() {
+        return status;
+    }
+
+    public Lot getLot() {
+        return lot;
+    }
+
     public void setStatus(boolean status) {
         this.status = status;
     }
