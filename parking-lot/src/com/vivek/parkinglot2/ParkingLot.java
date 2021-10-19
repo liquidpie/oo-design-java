@@ -60,7 +60,7 @@ public class ParkingLot {
             ticket = parkBySize(vehicle, vehicle.size);
             if (null == ticket && vehicle.size != SizeType.LARGE) {
                 if (vehicle.size == SizeType.MEDIUM) {
-                    ticket = parkBySize(vehicle, SizeType.SMALL);
+                    ticket = parkBySize(vehicle, SizeType.LARGE);
                 }
                 else if (vehicle.size == SizeType.SMALL) {
                     ticket = parkBySize(vehicle, SizeType.MEDIUM);
