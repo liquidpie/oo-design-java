@@ -5,6 +5,6 @@ public enum SeatType {
     NORMAL,
     EXECUTIVE,
     PREMIUM,
-    VIP;
+    VIP
 
 }

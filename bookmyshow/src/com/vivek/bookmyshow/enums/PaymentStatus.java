@@ -2,7 +2,11 @@ package com.vivek.bookmyshow.enums;
 
 public enum PaymentStatus {
 
-    PAID,
-    UNPAID;
+    UNPAID,
+    PENDING,
+    COMPLETED,
+    DECLINED,
+    CANCELLED,
+    REFUNDED
 
 }
