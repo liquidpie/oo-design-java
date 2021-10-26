@@ -9,7 +9,7 @@ import java.util.PriorityQueue;
 public class LFUEvictionPolicy<Key> implements EvictionPolicy<Key> {
 
     private final PriorityQueue<AccessCountNode<Key>> counter;
-    private final Map<Key, AccessCountNode<Key>> mapper;
+    private final Map<Key, AccessCountNode<Key>> mapper;  // this map will not be required if merged with storage map
 
     public LFUEvictionPolicy() {
         this.counter = new PriorityQueue<>();
