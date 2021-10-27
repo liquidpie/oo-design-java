@@ -3,13 +3,12 @@ package com.vivek.bms.model;
 import java.time.Instant;
 import java.util.Date;
 
-
 public class SeatLock {
-    private Seat seat;
-    private Show show;
-    private Integer timeoutInSeconds;
-    private Date lockTime;
-    private String lockedBy;
+    private final Seat seat;
+    private final Show show;
+    private final Integer timeoutInSeconds;
+    private final Date lockTime;
+    private final String lockedBy;
 
     public SeatLock(Seat seat, Show show, Integer timeoutInSeconds, Date lockTime, String lockedBy) {
         this.seat = seat;
@@ -44,4 +43,5 @@ public class SeatLock {
     public String getLockedBy() {
         return lockedBy;
     }
+
 }

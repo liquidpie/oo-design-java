@@ -1,6 +1,5 @@
 package com.vivek.bms.model;
 
-import javax.management.MXBean;
 import java.util.ArrayList;
 import java.util.List;
 

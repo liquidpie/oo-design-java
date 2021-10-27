@@ -24,4 +24,5 @@ public class Seat {
     public int getSeatNo() {
         return seatNo;
     }
+
 }

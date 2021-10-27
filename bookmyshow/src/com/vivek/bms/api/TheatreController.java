@@ -5,6 +5,7 @@ import com.vivek.bms.model.Theatre;
 import com.vivek.bms.services.TheatreService;
 
 public class TheatreController {
+
     final private TheatreService theatreService;
 
     public TheatreController(TheatreService theatreService) {
@@ -24,4 +25,5 @@ public class TheatreController {
         final Screen screen = theatreService.getScreen(screenId);
         return theatreService.createSeatInScreen(rowNo, seatNo, screen).getId();
     }
+
 }

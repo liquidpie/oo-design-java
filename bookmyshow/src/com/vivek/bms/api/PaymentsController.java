@@ -4,6 +4,7 @@ import com.vivek.bms.services.BookingService;
 import com.vivek.bms.services.PaymentsService;
 
 public class PaymentsController {
+
     private final PaymentsService paymentsService;
     private final BookingService bookingService;
 
