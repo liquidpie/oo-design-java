@@ -42,7 +42,12 @@ public class UrlService {
     }
 
     public String getOriginalUrl(String shortUrl) {
-
+        URL url = urlsDao.getUrlByHash(shortUrl);
+        if (url.getExpirationDate() != null && url.getExpirationDate().isBefore(LocalDate.now())) {
+            urlsDao.delete(url.getHash());
+            return "Link Expired";
+        }
+        return url.getOriginalUrl();
     }
 
     private URL getOrCreate(UrlShortenRequest request, String userId) {
