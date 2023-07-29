@@ -37,4 +37,8 @@ public class Message {
     public MessageReceipt getState() {
         return state;
     }
+
+    public void setState(MessageReceipt state) {
+        this.state = state;
+    }
 }
