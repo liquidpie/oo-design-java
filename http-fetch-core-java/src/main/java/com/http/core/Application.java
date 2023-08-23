@@ -1,8 +1,8 @@
 package com.http.core;
 
 import com.http.core.ex1.utils.ApiClient;
+import com.http.core.ex1.utils.GsonUtil;
 import com.http.core.ex2.HttpClient;
-import com.http.core.ex2.JsonUtil;
 import com.http.core.ex1.model.Response;
 
 import java.io.IOException;
@@ -36,7 +36,7 @@ public class Application {
     private static Consumer<Response> readResponse() {
         return response -> {
             System.out.println("Response:\n<----->");
-            JsonUtil.printJson(response);
+            GsonUtil.printJson(response);
             System.out.println("\n<----->");
         };
     }
