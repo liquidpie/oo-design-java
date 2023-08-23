@@ -1,8 +1,6 @@
-package com.vivek.external.api.client;
+package com.http.core.ex1.utils;
 
-import com.google.gson.Gson;
-import com.vivek.external.api.model.Response;
-import com.vivek.external.api.util.JsonUtil;
+import com.http.core.ex1.model.Response;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -37,7 +35,7 @@ public class ApiClient {
             InputStream stream = connection.getInputStream();
 
             String out = new String(stream.readAllBytes(), StandardCharsets.UTF_8);
-            return JsonUtil.fromJson(out, Response.class);
+            return GsonUtil.fromJson(out, Response.class);
 
         } catch (IOException e) {
             e.printStackTrace();

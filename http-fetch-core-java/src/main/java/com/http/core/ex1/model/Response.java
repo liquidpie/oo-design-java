@@ -1,4 +1,4 @@
-package com.vivek.external.api.model;
+package com.http.core.ex1.model;
 
 import java.util.List;
 

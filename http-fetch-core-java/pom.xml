@@ -3,10 +3,10 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.vivek</groupId>
-    <artifactId>external-api</artifactId>
+    <groupId>com.http.core</groupId>
+    <artifactId>http-fetch-core-java</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <name>external-api</name>
+    <name>http-fetch-core-java</name>
     <description>External Api</description>
 
     <dependencies>
@@ -17,6 +17,13 @@
             <version>2.8.8</version>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/org.json/json -->
+        <dependency>
+            <groupId>org.json</groupId>
+            <artifactId>json</artifactId>
+            <version>20230618</version>
+        </dependency>
+
     </dependencies>
 
     <build>
@@ -25,8 +32,8 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
-                    <source>11</source>
-                    <target>11</target>
+                    <source>17</source>
+                    <target>17</target>
                 </configuration>
             </plugin>
         </plugins>

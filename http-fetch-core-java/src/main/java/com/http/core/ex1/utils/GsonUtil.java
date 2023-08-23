@@ -1,13 +1,13 @@
-package com.vivek.external.api.util;
+package com.http.core.ex1.utils;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
-public class JsonUtil {
+public class GsonUtil {
 
     private static final Gson gson = new GsonBuilder().setPrettyPrinting().create();
 
-    private JsonUtil() { }
+    private GsonUtil() { }
 
     public static <T> T fromJson(String input, Class<T> clazz) {
         return gson.fromJson(input, clazz);
