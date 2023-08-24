@@ -2,10 +2,13 @@ package com.http.core;
 
 import com.http.core.ex1.utils.ApiClient;
 import com.http.core.ex1.utils.GsonUtil;
+import com.http.core.ex2.Ex2Controller;
 import com.http.core.ex2.HttpClient;
 import com.http.core.ex1.model.Response;
+import com.http.core.ex2.model.User;
 
 import java.io.IOException;
+import java.util.List;
 import java.util.function.Consumer;
 import java.util.stream.IntStream;
 
@@ -18,11 +21,12 @@ public class Application {
         }
 
         {
-            HttpClient client = new HttpClient();
-            client.sendGET();
-            System.out.println("GET DONE");
-            client.sendPOST();
-            System.out.println("POST DONE");
+            Ex2Controller controller = new Ex2Controller();
+            List<User> users = controller.getAllUsers();
+            System.out.println(users);
+
+            User user = controller.createUser("Kate", "Middleton");
+            System.out.println(user);
         }
     }
 
